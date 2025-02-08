@@ -55,20 +55,20 @@ h1:focus {
     border: 1px solid black;
 }
 .head{
-    display: flex;
     background-color:#3AA7FF;
     height: 325px;
 }
 .header-text{
     display: flex;
     width: 100%;
-    margin: 15px;
     color: white;
 }
 .header-title{
     font-weight: bold;
     font-size: 15px;
     height: min-content;
+    margin-left: 85px;
+    margin-top: 20px;
 }
 .nav-menu{
     display: flex;
@@ -78,10 +78,78 @@ h1:focus {
     margin-right: 15px;
 }
 .nav-text{
-    word-spacing: 30px;
+    word-spacing: 40px;
     height: min-content;
+    margin-right: 40px;
+    margin-top: 20px;
 }
 .text{
     display: flex;
     flex-direction: column;
+    color:white;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 85px;
+    margin-top:15px
+}
+.text_2{
+    font-size: 15px;
+}
+.choice-route{
+    max-width: 625px;
+    max-height: 45px;
+    border-radius: 5px;
+    background-color:white;
+    margin-left: 85px;
+    margin-top: 60px;
+}
+.choice-route-text{
+    display: flex;
+    justify-content: space-around;
+    font-size: 13px;
+}
+.from{
+    border-right: 2px solid #0004FF;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+    margin-left: -30px;
+}
+.where{
+    border-right: 2px solid #0004FF;
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+    margin-left: -65px;
+}
+.there{
+    border-right: 2px solid #0004FF;
+    display: flex;
+    align-items: center;
+    padding-right: 45px;
+    margin-left: -65px;
+}
+.back{
+    border-right: 2px solid #0004FF;
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+    margin-left: -65px;
+}
+.passengers{
+    display: flex;
+    align-items: center;
+    margin-left: -65px;
+}
+.find{
+    display: flex;
+    align-items: center;
+    color:white;
+    background-color: red;
+    border-radius: 5px;
+    margin-right: -45px;
+    width: 150px;
+    padding-left: 60px;
+    font-weight: bold;
 }
