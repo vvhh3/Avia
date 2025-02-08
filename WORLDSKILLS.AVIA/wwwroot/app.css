@@ -219,6 +219,32 @@ h1:focus {
 .main{
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
-    margin-top:65px;
+    margin-left: 85px;
+    margin-top:370px; /*65px*/
 }
+.main-title{
+    font-weight: bold;
+    font-size: 20px;
+    max-width: max-content;
+}
+.main-block{
+    margin-top:30px;
+    display: flex;
+}
+.main-block-info{
+    min-width: 220px;
+    min-height: 120px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.main-block-title{
+    font-weight: bold;
+    font-size: 15px;
+    margin:20px 0px 7px 35px;
+}
+.main-block-text{
+    font-size:10px;
+    display: flex;
+    justify-content: center;
+}
+
