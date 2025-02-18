@@ -17,12 +17,16 @@
         </div>
         <div class="choice-route"> <!--Переделать этот блок позже-->
             <div class="choice-route-text">
-                <div class="from">Откуда</div> 
-                <div class="where">Куда</div>
+                <input class="from" @bind="Input_chouse_from" placeholder="Откуда"> 
+                <input class="where" @bind="Input_chouse_where" placeholder="Куда"> 
+                <input class="there" @bind="Input_chouse_there" placeholder="Туда"> 
+                <input class="back" @bind="Input_chouse_back" placeholder="Обратно"> 
+                <input class="passengers" @bind="Input_chouse_passengers" placeholder="Пассажиров"> 
+                <!--<div class="where">Куда</div>
                 <div class="there">Туда</div>
                 <div class="back">Обратно</div>
-                <div class="passengers">Пассажиров</div>
-                <div class="find">Найти</div>
+                <div class="passengers">Пассажиров</div>-->
+                <button @onclick="RemoveChouse" class="find">Найти</button>
             </div>
         </div>
         <div class="block">
@@ -153,11 +157,26 @@
         </div>
     </div>
 </div>
+
 @code {
+    public string Input_chouse_from { get; set; }
+    public string Input_chouse_where { get; set; }
+    public string Input_chouse_there { get; set; }
+    public string Input_chouse_back { get; set; }
+    public string Input_chouse_passengers { get; set; }
+    
     public string Inp { get; set; }
     public string Remove_Name { get; set; }
     public string Remove_Phone { get; set; }
 
+    public void RemoveChouse()
+    {
+        Input_chouse_from = string.Empty;
+        Input_chouse_where = string.Empty;
+        Input_chouse_there = string.Empty;
+        Input_chouse_back = string.Empty;
+        Input_chouse_passengers = string.Empty;
+    }
     public void RemoveInfo()
     {
         Inp = string.Empty;
