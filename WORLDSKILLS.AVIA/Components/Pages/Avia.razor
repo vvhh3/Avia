@@ -1,4 +1,5 @@
 @page "/Avia"
+@rendermode InteractiveServer
 <h3>Avia</h3>
 <div class="Avia">
     <div class="head">
@@ -7,7 +8,7 @@
                 WORLDSKILLS.AVIA
             </div>
             <div class="nav-menu">
-                <p class="nav-text">Акции Поиск Регистрация кабинет</p>
+                <p class="nav-text"><a href="https://promokod.pikabu.ru/shops/aviasales?ysclid=m7a8e2prm5112942958" class="nav-text">Акции</a> <a href="#" class="nav-text">Регистрация</a> <a href="#" class="nav-text">Войти</a></p>
             </div>
         </div>
         <div class="text">
@@ -40,8 +41,8 @@
                         <div class="city-title">
                             Принцип #1.Введите город прилета
                         </div>
-                        <input class="city-input" type="text" placeholder="Город прилёта..."/>
-                        <button class="city-btn">Следующий вопрос</button>
+                        <input  @bind="Inp"class="city-input" type="text" placeholder="Город прилёта..."/>
+                        <button @onclick="RemoveInfo" class="city-btn">Следующий вопрос</button>
                     </div>
                 </div>
             </div>
@@ -137,9 +138,9 @@
         <div class="footer-sub">
             <p class="sub-title">ПОДПИШИСЬ НА РАССЫЛКУ О ЗАКРЫТЫХ АКЦИЯХ</p>
             <div class="sub-text">
-                <input class="name" type="text" placeholder="Введите имя"/>
-                <input class="phone" type="text" placeholder="Введите телефон"/>
-                <button class="sub-btn"> ПОДПИСАТЬСЯ</button>
+                <input @bind="Remove_Name" class="name" type="text" placeholder="Введите имя"/>
+                <input @bind="Remove_Phone" class="phone" type="text" placeholder="Введите телефон"/>
+                <button @onclick="RemoveFoot" class="sub-btn"> ПОДПИСАТЬСЯ</button>
             </div>
         </div>
         <div class="footer-info">
@@ -153,5 +154,18 @@
     </div>
 </div>
 @code {
-    
+    public string Inp { get; set; }
+    public string Remove_Name { get; set; }
+    public string Remove_Phone { get; set; }
+
+    public void RemoveInfo()
+    {
+        Inp = string.Empty;
+    }
+
+    public void RemoveFoot()
+    {
+        Remove_Name = string.Empty;
+        Remove_Phone = string.Empty;
+    }
 }
