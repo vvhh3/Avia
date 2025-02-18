@@ -18,14 +18,10 @@
         <div class="choice-route"> <!--Переделать этот блок позже-->
             <div class="choice-route-text">
                 <input class="from" @bind="Input_chouse_from" placeholder="Откуда"> 
-                <input class="where" @bind="Input_chouse_where" placeholder="Куда"> 
+                <input class="where" @bind="Input_chouse_where" placeholder="Куда">
                 <input class="there" @bind="Input_chouse_there" placeholder="Туда"> 
-                <input class="back" @bind="Input_chouse_back" placeholder="Обратно"> 
-                <input class="passengers" @bind="Input_chouse_passengers" placeholder="Пассажиров"> 
-                <!--<div class="where">Куда</div>
-                <div class="there">Туда</div>
-                <div class="back">Обратно</div>
-                <div class="passengers">Пассажиров</div>-->
+                <input class="back" @bind="Input_chouse_back" placeholder="Обратно">
+                <input class="passengers" @bind="Input_chouse_passengers" placeholder="Пассажиров">  
                 <button @onclick="RemoveChouse" class="find">Найти</button>
             </div>
         </div>
@@ -45,7 +41,7 @@
                         <div class="city-title">
                             Принцип #1.Введите город прилета
                         </div>
-                        <input  @bind="Inp"class="city-input" type="text" placeholder="Город прилёта..."/>
+                        <input  @bind="Inp" class="city-input" type="text" placeholder="Город прилёта..."/>
                         <button @onclick="RemoveInfo" class="city-btn">Следующий вопрос</button>
                     </div>
                 </div>
@@ -100,12 +96,12 @@
         </div>
         <div class="choice-route-2"> <!--Переделать этот блок позже-->
             <div class="choice-route-text-2">
-                <div class="from-2">Откуда</div> 
-                <div class="where-2">Куда</div>
-                <div class="there-2">Туда</div>
-                <div class="back-2">Обратно</div>
-                <div class="passengers-2">Пассажиров</div>
-                <div class="find-2">Найти</div>
+                <input class="from-2" @bind="Input_chouse_from_main" placeholder="Откуда"> 
+                <input class="where-2" @bind="Input_chouse_where_main" placeholder="Куда">
+                <input class="there-2" @bind="Input_chouse_there_main" placeholder="Туда"> 
+                 <input class="back-2" @bind="Input_chouse_back_main" placeholder="Обратно">
+                 <input class="passengers-2" @bind="Input_chouse_passengers_main" placeholder="Пассажиров">  
+                <button @onclick="RemoveChouseMain" class="find-2">Найти</button>
             </div>
         </div>
         <div class="flight">
@@ -163,7 +159,13 @@
     public string Input_chouse_where { get; set; }
     public string Input_chouse_there { get; set; }
     public string Input_chouse_back { get; set; }
-    public string Input_chouse_passengers { get; set; }
+    public string Input_chouse_passengers { get; set; }    
+    
+    public string Input_chouse_from_main{ get; set; }
+    public string Input_chouse_where_main { get; set; }
+    public string Input_chouse_there_main { get; set; }
+    public string Input_chouse_back_main { get; set; }
+    public string Input_chouse_passengers_main { get; set; }
     
     public string Inp { get; set; }
     public string Remove_Name { get; set; }
@@ -176,7 +178,16 @@
         Input_chouse_there = string.Empty;
         Input_chouse_back = string.Empty;
         Input_chouse_passengers = string.Empty;
+    }    
+    void RemoveChouseMain()
+    {
+        Input_chouse_from_main = string.Empty;
+        Input_chouse_where_main = string.Empty;
+        Input_chouse_there_main = string.Empty;
+        Input_chouse_back_main = string.Empty;
+        Input_chouse_passengers_main = string.Empty;
     }
+    
     public void RemoveInfo()
     {
         Inp = string.Empty;
