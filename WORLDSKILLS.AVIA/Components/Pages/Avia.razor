@@ -8,7 +8,7 @@
                 WORLDSKILLS.AVIA
             </div>
             <div class="nav-menu">
-                <p class="nav-text"><a href="https://promokod.pikabu.ru/shops/aviasales?ysclid=m7a8e2prm5112942958" class="nav-text">Акции</a> <a href="#" class="nav-text">Регистрация</a> <a href="#" class="nav-text">Войти</a></p>
+                <p class="nav-text"><a href="https://promokod.pikabu.ru/shops/aviasales?ysclid=m7a8e2prm5112942958" class="nav-text">Акции</a> <a href="AviaForm" class="nav-text">Регистрация</a> <a href="#" class="nav-text">Войти</a></p>
             </div>
         </div>
         <div class="text">
@@ -22,7 +22,7 @@
                 <input class="there" @bind="Input_chouse_there" placeholder="Туда"> 
                 <input class="back" @bind="Input_chouse_back" placeholder="Обратно">
                 <input class="passengers" @bind="Input_chouse_passengers" placeholder="Пассажиров">  
-                <button @onclick="RemoveChouse" class="find">Найти</button>
+                <button @onclick="RemoveChouse" class="button">Найти</button>
             </div>
         </div>
         <div class="block">
@@ -94,14 +94,14 @@
                 </div>
             </div>
         </div>
-        <div class="choice-route-2"> <!--Переделать этот блок позже-->
+        <div class="choice-route-2">
             <div class="choice-route-text-2">
                 <input class="from-2" @bind="Input_chouse_from_main" placeholder="Откуда"> 
                 <input class="where-2" @bind="Input_chouse_where_main" placeholder="Куда">
                 <input class="there-2" @bind="Input_chouse_there_main" placeholder="Туда"> 
                  <input class="back-2" @bind="Input_chouse_back_main" placeholder="Обратно">
                  <input class="passengers-2" @bind="Input_chouse_passengers_main" placeholder="Пассажиров">  
-                <button @onclick="RemoveChouseMain" class="find-2">Найти</button>
+                <button @onclick="RemoveChouseMain" class="button">Найти</button>
             </div>
         </div>
         <div class="flight">
