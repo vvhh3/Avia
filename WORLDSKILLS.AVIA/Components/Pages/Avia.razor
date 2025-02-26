@@ -1,4 +1,6 @@
 @page "/Avia"
+@using Models
+@using Newtonsoft.Json
 @rendermode InteractiveServer
 <h3>Avia</h3>
 <div class="Avia">
@@ -8,7 +10,7 @@
                 WORLDSKILLS.AVIA
             </div>
             <div class="nav-menu">
-                <p class="nav-text"><a href="https://promokod.pikabu.ru/shops/aviasales?ysclid=m7a8e2prm5112942958" class="nav-text">Акции</a> <a href="AviaForm" class="nav-text">Регистрация</a> <a href="#" class="nav-text">Войти</a></p>
+                <p class="nav-text"><a href="https://promokod.pikabu.ru/shops/aviasales?ysclid=m7a8e2prm5112942958" class="nav-text">Акции</a> <a href="AviaForm" class="nav-text">Регистрация</a> <a href="AviaForm" class="nav-text">Войти</a> <a href="Reviews" class="nav-text">Отзывы</a></p>
             </div>
         </div>
         <div class="text">
@@ -138,9 +140,9 @@
         <div class="footer-sub">
             <p class="sub-title">ПОДПИШИСЬ НА РАССЫЛКУ О ЗАКРЫТЫХ АКЦИЯХ</p>
             <div class="sub-text">
-                <input @bind="Remove_Name" class="name" type="text" placeholder="Введите имя"/>
-                <input @bind="Remove_Phone" class="phone" type="text" placeholder="Введите телефон"/>
-                <button @onclick="RemoveFoot" class="sub-btn"> ПОДПИСАТЬСЯ</button>
+                <textarea class="name" type="text" placeholder="Напишите свой отзыв о нас" @bind="_newFeedBack.Text"></textarea>
+                <input  class="phone" type="text"  @bind="_newFeedBack.Stars"/>
+                <button class="sub-btn" @onclick="Change">Оставить отзыв</button>
             </div>
         </div>
         <div class="footer-info">
@@ -168,9 +170,12 @@
     public string Input_chouse_passengers_main { get; set; }
     
     public string Inp { get; set; }
-    public string Remove_Name { get; set; }
-    public string Remove_Phone { get; set; }
 
+    public bool BtnCheck { get; set; } = false;
+    public IList<SavingCl> FeedBack = new List<SavingCl>();
+    public int InputUs { get; set; }
+    private SavingCl _newFeedBack = new SavingCl();
+    const string path = "AllTasks.json";
     public void RemoveChouse()
     {
         Input_chouse_from = string.Empty;
@@ -193,9 +198,43 @@
         Inp = string.Empty;
     }
 
-    public void RemoveFoot()
+
+    protected override void OnInitialized()
     {
-        Remove_Name = string.Empty;
-        Remove_Phone = string.Empty;
+        OpenFile();
+    }
+    
+    public void OpenFile()
+    {
+        if (File.Exists(path))
+        {
+            var json = File.ReadAllText(path);
+            FeedBack = JsonConvert.DeserializeObject<List<SavingCl>>(json)!;
+        }
+        else
+        {
+            SaveFile();
+        }
+    }
+
+    public void SaveFile()
+    {
+        var json = JsonConvert.SerializeObject(FeedBack);
+        File.WriteAllText(path, json);
+    }
+
+    private void Change()
+    {
+        FeedBack.Add(_newFeedBack);
+        _newFeedBack = new SavingCl();
+        SaveFile();
+        _newFeedBack.Stars += InputUs;
+        BtnCheck = true;
+    }
+
+    private void RemoveKeep(SavingCl item)
+    {
+        FeedBack.Remove(item);
+        SaveFile();
     }
 }

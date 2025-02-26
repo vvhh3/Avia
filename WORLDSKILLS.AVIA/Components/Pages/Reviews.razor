@@ -1,0 +1,78 @@
+@page "/Reviews"
+@using Models
+@using Newtonsoft.Json
+
+@rendermode InteractiveServer
+
+<h3>Reviews</h3>
+
+@* <textarea type="text" placeholder="Напишите свой отзыв о нас" @bind="_newFeedBack.Text"></textarea> *@
+@* <input type="text"  @bind="_newFeedBack.Stars"/> *@
+@* <button @onclick="Change">Оставить отзыв</button> *@
+<table>
+    @foreach (SavingCl item in FeedBack)
+    {
+            @item.Text
+            @for (var i = 0; i < 5; i++)
+            {
+                if (i <= @item.Stars-1)
+                {
+                    <p>★</p>
+                }
+                else
+                {
+                    <p>☆</p>
+                }
+            }
+    }
+</table>
+
+@code {
+    public bool BtnCheck { get; set; } = false;
+    public IList<SavingCl> FeedBack = new List<SavingCl>();
+    public int InputUs { get; set; }
+    private SavingCl _newFeedBack = new SavingCl();
+    const string path = "AllTasks.json";
+
+
+    protected override void OnInitialized()
+    {
+        OpenFile();
+    }
+    
+    public void OpenFile()
+    {
+        if (File.Exists(path))
+        {
+            var json = File.ReadAllText(path);
+            FeedBack = JsonConvert.DeserializeObject<List<SavingCl>>(json)!;
+        }
+        else
+        {
+            SaveFile();
+        }
+    }
+
+    public void SaveFile()
+    {
+        var json = JsonConvert.SerializeObject(FeedBack);
+        File.WriteAllText(path, json);
+    }
+
+    private void Change()
+    {
+        FeedBack.Add(_newFeedBack);
+        _newFeedBack = new SavingCl();
+        SaveFile();
+        _newFeedBack.Stars += InputUs;
+        BtnCheck = true;
+    }
+
+    private void RemoveKeep(SavingCl item)
+    {
+        FeedBack.Remove(item);
+        SaveFile();
+    }
+    
+
+}
