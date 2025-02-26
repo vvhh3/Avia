@@ -10,20 +10,23 @@
                 WORLDSKILLS.AVIA
             </div>
             <div class="nav-menu">
-                <p class="nav-text"><a href="https://promokod.pikabu.ru/shops/aviasales?ysclid=m7a8e2prm5112942958" class="nav-text">Акции</a> <a href="AviaForm" class="nav-text">Регистрация</a> <a href="AviaForm" class="nav-text">Войти</a> <a href="Reviews" class="nav-text">Отзывы</a></p>
+                <p class="nav-text">
+                    <a href="https://promokod.pikabu.ru/shops/aviasales?ysclid=m7a8e2prm5112942958" class="nav-text">Акции</a> <a href="AviaForm" class="nav-text">Регистрация</a> <a href="AviaForm" class="nav-text">Войти</a> <a href="Reviews" class="nav-text">Отзывы</a>
+                </p>
             </div>
         </div>
         <div class="text">
             ПОЛУЧИ СКИДКУ НА АВИАПЕРЕЛЁТ
             <div class="text_2">Законно! Легально! Работаем более 10 лет</div>
         </div>
-        <div class="choice-route"> <!--Переделать этот блок позже-->
+        <div class="choice-route">
+            <!--Переделать этот блок позже-->
             <div class="choice-route-text">
-                <input class="from" @bind="Input_chouse_from" placeholder="Откуда"> 
+                <input class="from" @bind="Input_chouse_from" placeholder="Откуда">
                 <input class="where" @bind="Input_chouse_where" placeholder="Куда">
-                <input class="there" @bind="Input_chouse_there" placeholder="Туда"> 
+                <input class="there" @bind="Input_chouse_there" placeholder="Туда">
                 <input class="back" @bind="Input_chouse_back" placeholder="Обратно">
-                <input class="passengers" @bind="Input_chouse_passengers" placeholder="Пассажиров">  
+                <input class="passengers" @bind="Input_chouse_passengers" placeholder="Пассажиров">
                 <button @onclick="RemoveChouse" class="button">Найти</button>
             </div>
         </div>
@@ -43,7 +46,7 @@
                         <div class="city-title">
                             Принцип #1.Введите город прилета
                         </div>
-                        <input  @bind="Inp" class="city-input" type="text" placeholder="Город прилёта..."/>
+                        <input @bind="Inp" class="city-input" type="text" placeholder="Город прилёта..."/>
                         <button @onclick="RemoveInfo" class="city-btn">Следующий вопрос</button>
                     </div>
                 </div>
@@ -64,7 +67,7 @@
                         Мы гарантируем, что наши<br/> цены ниже, чем у конкурентов,<br/> а качество на таком же уровне
                     </div>
                 </div>
-            </div>            
+            </div>
             <div class="main-block">
                 <div class="main-block-info">
                     <div class="main-block-title">
@@ -74,7 +77,7 @@
                         Мы гарантируем, что наши<br/> цены ниже, чем у конкурентов,<br/> а качество на таком же уровне
                     </div>
                 </div>
-            </div>            
+            </div>
             <div class="main-block">
                 <div class="main-block-info">
                     <div class="main-block-title">
@@ -84,7 +87,7 @@
                         Мы гарантируем, что наши<br/> цены ниже, чем у конкурентов,<br/> а качество на таком же уровне
                     </div>
                 </div>
-            </div>            
+            </div>
             <div class="main-block">
                 <div class="main-block-info">
                     <div class="main-block-title">
@@ -98,11 +101,11 @@
         </div>
         <div class="choice-route-2">
             <div class="choice-route-text-2">
-                <input class="from-2" @bind="Input_chouse_from_main" placeholder="Откуда"> 
+                <input class="from-2" @bind="Input_chouse_from_main" placeholder="Откуда">
                 <input class="where-2" @bind="Input_chouse_where_main" placeholder="Куда">
-                <input class="there-2" @bind="Input_chouse_there_main" placeholder="Туда"> 
-                 <input class="back-2" @bind="Input_chouse_back_main" placeholder="Обратно">
-                 <input class="passengers-2" @bind="Input_chouse_passengers_main" placeholder="Пассажиров">  
+                <input class="there-2" @bind="Input_chouse_there_main" placeholder="Туда">
+                <input class="back-2" @bind="Input_chouse_back_main" placeholder="Обратно">
+                <input class="passengers-2" @bind="Input_chouse_passengers_main" placeholder="Пассажиров">
                 <button @onclick="RemoveChouseMain" class="button">Найти</button>
             </div>
         </div>
@@ -113,7 +116,7 @@
                     <p class="flight-title">Перелет в село</p>
                     <p class="flight-main">Быстро, в село-курорт. Уже через несколько<br/> часов вы окажетесь с горячей <br/>чиксой на сеновале</p>
                     <p class="flight-footer">500 ₽/чел</p>
-                    <a  href="https://online.sberbank.ru/CSAFront/index.do" class="flight-more">УЗНАТЬ ПОДРОБНЕЕ</a>
+                    <a href="https://online.sberbank.ru/CSAFront/index.do" class="flight-more">УЗНАТЬ ПОДРОБНЕЕ</a>
                 </div>
             </div>
             <div class="flight-block">
@@ -122,7 +125,7 @@
                     <p class="flight-title">Перелет в село</p>
                     <p class="flight-main">Быстро, в село-курорт. Уже через несколько<br/> часов вы окажетесь с горячей <br/>чиксой на сеновале</p>
                     <p class="flight-footer">500 ₽/чел</p>
-                    <a  href="https://online.sberbank.ru/CSAFront/index.do" class="flight-more">УЗНАТЬ ПОДРОБНЕЕ</a>
+                    <a href="https://online.sberbank.ru/CSAFront/index.do" class="flight-more">УЗНАТЬ ПОДРОБНЕЕ</a>
                 </div>
             </div>
             <div class="flight-block">
@@ -131,17 +134,17 @@
                     <p class="flight-title">Перелет в село</p>
                     <p class="flight-main">Быстро, в село-курорт. Уже через несколько<br/> часов вы окажетесь с горячей <br/>чиксой на сеновале</p>
                     <p class="flight-footer">500 ₽/чел</p>
-                    <a  href="https://online.sberbank.ru/CSAFront/index.do" class="flight-more">УЗНАТЬ ПОДРОБНЕЕ</a>
+                    <a href="https://online.sberbank.ru/CSAFront/index.do" class="flight-more">УЗНАТЬ ПОДРОБНЕЕ</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="footer">
         <div class="footer-sub">
-            <p class="sub-title">ПОДПИШИСЬ НА РАССЫЛКУ О ЗАКРЫТЫХ АКЦИЯХ</p>
+            <p class="sub-title">ОСТАВЬТЕ СВОЙ ОТЗЫВ 😊</p>
             <div class="sub-text">
                 <textarea class="name" type="text" placeholder="Напишите свой отзыв о нас" @bind="_newFeedBack.Text"></textarea>
-                <input  class="phone" type="text"  @bind="_newFeedBack.Stars"/>
+                <input class="phone" type="text" placeholder="Оцените нас от 0 до 5" @bind="_newFeedBack.Stars"/>
                 <button class="sub-btn" @onclick="Change">Оставить отзыв</button>
             </div>
         </div>
@@ -161,21 +164,20 @@
     public string Input_chouse_where { get; set; }
     public string Input_chouse_there { get; set; }
     public string Input_chouse_back { get; set; }
-    public string Input_chouse_passengers { get; set; }    
-    
-    public string Input_chouse_from_main{ get; set; }
+    public string Input_chouse_passengers { get; set; }
+
+    public string Input_chouse_from_main { get; set; }
     public string Input_chouse_where_main { get; set; }
     public string Input_chouse_there_main { get; set; }
     public string Input_chouse_back_main { get; set; }
     public string Input_chouse_passengers_main { get; set; }
-    
+
     public string Inp { get; set; }
 
-    public bool BtnCheck { get; set; } = false;
     public IList<SavingCl> FeedBack = new List<SavingCl>();
-    public int InputUs { get; set; }
     private SavingCl _newFeedBack = new SavingCl();
     const string path = "AllTasks.json";
+
     public void RemoveChouse()
     {
         Input_chouse_from = string.Empty;
@@ -183,7 +185,8 @@
         Input_chouse_there = string.Empty;
         Input_chouse_back = string.Empty;
         Input_chouse_passengers = string.Empty;
-    }    
+    }
+
     void RemoveChouseMain()
     {
         Input_chouse_from_main = string.Empty;
@@ -192,7 +195,7 @@
         Input_chouse_back_main = string.Empty;
         Input_chouse_passengers_main = string.Empty;
     }
-    
+
     public void RemoveInfo()
     {
         Inp = string.Empty;
@@ -203,7 +206,7 @@
     {
         OpenFile();
     }
-    
+
     public void OpenFile()
     {
         if (File.Exists(path))
@@ -228,13 +231,6 @@
         FeedBack.Add(_newFeedBack);
         _newFeedBack = new SavingCl();
         SaveFile();
-        _newFeedBack.Stars += InputUs;
-        BtnCheck = true;
     }
 
-    private void RemoveKeep(SavingCl item)
-    {
-        FeedBack.Remove(item);
-        SaveFile();
-    }
 }

@@ -224,7 +224,7 @@ h1:focus {
     border: none;
     box-shadow: 0px 9px 9px -3px rgba(34, 60, 80, 0.6);
 }
-.main{
+.main{    /* середина*/
     display: flex;
     flex-direction: column;
     margin-left: 85px;
@@ -340,7 +340,7 @@ h1:focus {
     color:#0004FF;
     text-decoration: none;
 }
-.footer{
+.footer{    /*  низ сайта*/
     display: flex;
     flex-direction: column;
 }
@@ -351,7 +351,7 @@ h1:focus {
     background-color: #3279FD;
 }
 .sub-title{
-    letter-spacing: 12px;
+    letter-spacing: 10px;
     display: flex;
     justify-content: center;
     margin: 25px;
@@ -423,7 +423,7 @@ h1:focus {
 }
 
 
-.form {
+.form {       /* Форма регистрации*/
     background-color: #fff;
     display: block;
     padding: 1rem;
@@ -486,4 +486,31 @@ h1:focus {
 
 .signup-link a {
     text-decoration: underline;
+}
+
+
+.reviews-table{         /*Отзывы*/
+    max-width: 1500px;
+    width: 1500px;
+    min-height: 500px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+.reviews-table-td{
+    margin-top: 10px;
+    display: flex;
+    min-width: 400px;
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+}
+.reviews-table-tr{
+    display: flex;
+    justify-content: space-around;
+}
+.reviews-avatar{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
 }

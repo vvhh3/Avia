@@ -4,18 +4,19 @@
 
 @rendermode InteractiveServer
 
-<h3>Reviews</h3>
+<h3>ОТЗЫВЫ</h3>
 
-@* <textarea type="text" placeholder="Напишите свой отзыв о нас" @bind="_newFeedBack.Text"></textarea> *@
-@* <input type="text"  @bind="_newFeedBack.Stars"/> *@
-@* <button @onclick="Change">Оставить отзыв</button> *@
-<table>
-    @foreach (SavingCl item in FeedBack)
-    {
+<table class="reviews-table">
+    <tr class="reviews-table-tr">
+        @foreach (SavingCl item in FeedBack)
+        {
+        <td class="reviews-table-td">
+            <img src="image/24.png" class="reviews-avatar"/>
             @item.Text
+
             @for (var i = 0; i < 5; i++)
             {
-                if (i <= @item.Stars-1)
+                if (i <= @item.Stars - 1)
                 {
                     <p>★</p>
                 }
@@ -24,13 +25,13 @@
                     <p>☆</p>
                 }
             }
-    }
+        </td>
+        }
+    </tr>
 </table>
 
 @code {
-    public bool BtnCheck { get; set; } = false;
     public IList<SavingCl> FeedBack = new List<SavingCl>();
-    public int InputUs { get; set; }
     private SavingCl _newFeedBack = new SavingCl();
     const string path = "AllTasks.json";
 
@@ -39,7 +40,7 @@
     {
         OpenFile();
     }
-    
+
     public void OpenFile()
     {
         if (File.Exists(path))
@@ -58,21 +59,4 @@
         var json = JsonConvert.SerializeObject(FeedBack);
         File.WriteAllText(path, json);
     }
-
-    private void Change()
-    {
-        FeedBack.Add(_newFeedBack);
-        _newFeedBack = new SavingCl();
-        SaveFile();
-        _newFeedBack.Stars += InputUs;
-        BtnCheck = true;
-    }
-
-    private void RemoveKeep(SavingCl item)
-    {
-        FeedBack.Remove(item);
-        SaveFile();
-    }
-    
-
 }
