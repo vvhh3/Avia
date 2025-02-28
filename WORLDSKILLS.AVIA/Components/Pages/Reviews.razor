@@ -7,31 +7,37 @@
 <h3>ОТЗЫВЫ</h3>
 
 <table class="reviews-table">
-    <tr class="reviews-table-tr">
-        @foreach (SavingCl item in FeedBack)
-        {
-        <td class="reviews-table-td">
-            <img src="image/24.png" class="reviews-avatar"/>
-            @item.Text
-
-            @for (var i = 0; i < 5; i++)
-            {
-                if (i <= @item.Stars - 1)
-                {
-                    <p>★</p>
-                }
-                else
-                {
-                    <p>☆</p>
-                }
-            }
-        </td>
-        }
-    </tr>
+    @foreach (SavingCl item in FeedBack)
+    {
+        <tr class="reviews-table-tr">
+            <td class="reviews-table-td">
+                <div class="reviews-head">
+                    <img src="image/24.png" class="reviews-avatar"/>
+                    <p class="reviews-name">@item.Name</p>
+                    @for (var i = 0; i < 5; i++)
+                    {
+                        if (i <= @item.Stars - 1)
+                        {
+                            <p class="reviews-stars">★</p>
+                        }
+                        else
+                        {
+                            <p class="reviews-stars">☆</p>
+                        }
+                    }
+                </div>
+                <td class="reviews-text-div">
+                    <p class="reviews-text">@item.Text</p>
+                </td>
+            </td>
+        </tr>
+    }
+   
 </table>
 
 @code {
     public IList<SavingCl> FeedBack = new List<SavingCl>();
+    public int num { get; set; }
     private SavingCl _newFeedBack = new SavingCl();
     const string path = "AllTasks.json";
 
@@ -59,4 +65,5 @@
         var json = JsonConvert.SerializeObject(FeedBack);
         File.WriteAllText(path, json);
     }
+
 }

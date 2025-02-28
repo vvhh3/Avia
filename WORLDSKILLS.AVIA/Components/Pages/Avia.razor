@@ -143,6 +143,7 @@
         <div class="footer-sub">
             <p class="sub-title">ОСТАВЬТЕ СВОЙ ОТЗЫВ 😊</p>
             <div class="sub-text">
+                <input class="name" type="text" placeholder="Напишите своё имя" @bind="_newFeedBack.Name"/>
                 <textarea class="name" type="text" placeholder="Напишите свой отзыв о нас" @bind="_newFeedBack.Text"></textarea>
                 <input class="phone" type="text" placeholder="Оцените нас от 0 до 5" @bind="_newFeedBack.Stars"/>
                 <button class="sub-btn" @onclick="Change">Оставить отзыв</button>
