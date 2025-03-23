@@ -1,23 +1,30 @@
 @page "/AviaForm"
+@using WORLDSKILLS.AVIA.Services
+@using Models
+@rendermode InteractiveServer
+@inject Registration Registration
+@inject Entrance Entrance
 <h3>AviaForm</h3>
 <div class="form">
-    <p class="form-title">Sign in to your account</p>
+    <p class="form-title">Войти</p>
     <div class="input-container">
-        <input placeholder="Enter email" type="email">
+        <input placeholder="Введите логин" type="text" @bind="Entrance.NewData.Login">
     </div>
     <div class="input-container">
-        <input placeholder="Enter password" type="password">
+        <input placeholder="Введите пароль" type="password" @bind="Entrance.NewData.Password">
     </div>
-    <button class="submit" type="submit">
-        Sign in
+    <button class="submit" type="submit" @onclick="Entrance.Checking">
+        Войти
     </button>
-
+    @Entrance.d
     <p class="signup-link">
-        No account?
-        <a href="">Sign up</a>
+        Нет аккаунта?
+        <a href="RegistrationPage">Зарегестрироваться</a>
+        <a href="Avia">Главная.Страница</a>
     </p>
 </div>
 
 @code {
+
 
 }

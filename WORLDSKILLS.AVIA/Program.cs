@@ -1,10 +1,13 @@
 using WORLDSKILLS.AVIA.Components;
+using WORLDSKILLS.AVIA.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+builder.Services.AddSingleton<Registration>();
+builder.Services.AddSingleton<Entrance>();
 
 var app = builder.Build();
 

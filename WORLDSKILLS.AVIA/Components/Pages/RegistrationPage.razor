@@ -1,0 +1,33 @@
+@page "/RegistrationPage"
+
+@using WORLDSKILLS.AVIA.Services
+@using Models
+@inject NavigationManager Navigationmanager
+@rendermode InteractiveServer
+@inject Registration Registration
+<h3>RegistrationPage</h3>
+<div class="form">
+    <p class="form-title">Регистрация</p>
+    <div class="input-container">
+        <input placeholder="Введите логин" type="text" @bind="Registration.NewUserData.LoginUser">
+    </div>
+    <div class="input-container">
+        <input placeholder="Введите пароль" type="password" @bind="Registration.NewUserData.PasswordUser">
+    </div>
+    <button class="submit" type="submit" @onclick="Registration.AddUser">
+        Зарегистророваться
+    </button>
+
+    <p class="signup-link">
+        Есть аккаунт?
+        <a href="AviaForm">Войти</a><br/>
+        <a href="Avia">Главная.Страница</a>
+    </p>
+   
+</div>
+
+@code {
+    public string loginPageNextPath { get; set; } = "/AviaForm";
+
+
+}
