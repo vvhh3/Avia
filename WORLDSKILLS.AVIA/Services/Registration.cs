@@ -6,8 +6,8 @@ public class Registration
 {
     public static IList<User> UserData = new List<User>();
     public static User NewUserData = new User();
-    public string AdminLogin { get; set; } = "Admin";
-    public string AdminPassword { get; set; } = "123";
+    public  static string AdminLogin { get; set; } = "Admin";
+    public  static string AdminPassword { get; set; } = "123";
 
     public void AddUser()
     {

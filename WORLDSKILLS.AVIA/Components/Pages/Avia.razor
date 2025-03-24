@@ -30,29 +30,32 @@
                 <button @onclick="RemoveChouse" class="button">Найти</button>
             </div>
         </div>
-        <div class="block">
-            <div class="block-title">
-                Онлайн-расчет стоимости<br/>полета со скидкой в нашем сервисе.
-                <div class="block-per">
-                    <div class="per-text">
-                        принцип 1 из 3
-                        <div class="per">
-                            <div class="per_2">
+        <div class="block-Air">
+            <div class="block">
+                <div class="block-title">
+                    Онлайн-расчет стоимости<br/>полета со скидкой в нашем сервисе.
+                    <div class="block-per">
+                        <div class="per-text">
+                            принцип 1 из 3
+                            <div class="per">
+                                <div class="per_2">
+                                </div>
                             </div>
+                            25%
                         </div>
-                        25%
-                    </div>
-                    <div class="city">
-                        <div class="city-title">
-                            Принцип #1.Введите город прилета
+                        <div class="city">
+                            <div class="city-title">
+                                Принцип #1.Введите город прилета
+                            </div>
+                            <input @bind="Inp" class="city-input" type="text" placeholder="Город прилёта..."/>
+                            <button @onclick="RemoveInfo" class="city-btn">Следующий вопрос</button>
                         </div>
-                        <input @bind="Inp" class="city-input" type="text" placeholder="Город прилёта..."/>
-                        <button @onclick="RemoveInfo" class="city-btn">Следующий вопрос</button>
                     </div>
-                </div>
+                </div>           
             </div>
+                <img src="image/Air.png" class="Air-img"/>
         </div>
-    </div>
+        </div>
     <div class="main">
         <div class="main-title">
             Нам доверяют, потому что мы:

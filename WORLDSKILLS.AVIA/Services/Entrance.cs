@@ -10,7 +10,7 @@ public class Entrance
 {
     public IList<Credentials> Data = new List<Credentials>();
     public static Credentials NewData = new Credentials();
-    public string d { get; set; }
+    public string sending { get; set; }
 
 
     public void Checking()
@@ -19,19 +19,20 @@ public class Entrance
         var itemPass = Registration.UserData.FirstOrDefault(o => o.PasswordUser == NewData.Password);
         if (Registration.UserData.Contains(itemLogin) && Registration.UserData.Contains(itemPass))
         {
-            d = "Вы вошли";
+            sending = "Вы вошли";
         }
         else
         {
-            d = "Неправильный логин или пароль";
+            sending = "Неправильный логин или пароль";
         }
 
-        if (NewData.Login == "Admin" && NewData.Password == "123")
+        if (NewData.Login == Registration.AdminLogin && NewData.Password == Registration.AdminPassword)
         {
-            d = "Вы вошли как администратор";
+            sending = "Вы вошли как администратор";
         }
 
         Data.Add(NewData);
         NewData = new Credentials();
     }
+    
 }

@@ -151,10 +151,18 @@ h1:focus {
     transform: translateY(5px);
     box-shadow: 0px 0px 0px 0px #a29bfe;
 }
-
+.block-Air{
+    display: flex;
+    justify-content: space-between;
+}
+.Air-img{
+    width: 900px;
+}
 .block{
     max-width: 500px;
+    min-width: 450px;
     min-height: 350px;
+    max-height: 350px;
     border-radius: 16px;
     background-color: white;
     border:1px solid white;
